@@ -73,106 +73,7 @@ task main()
 
   // YOU ARE NOW LEAVING THE INTERSECTION AT THE SOUTHWEST CORNER
   // INSERT SEQUENCE OF MAJOR SUBROUTINE CALLS BEGINNING WITH drive() HERE:
-  drive(1, 0);
-  turn(1);
-  drive(1, 0);
-  turn(1);
-  drive(1, 0);
-  turn(1);
-  drive(1, 0);
-  turn(1);
-  drive(1, 0);
-  turn(1);
-  drive(1, 0);
-  turn(1);
-  drive(1, 0);
-  turn(0); //Southeast corner
-  drive(1, 0);
-  turn(1);
-  drive(1, 1);
-  park(1, 0); //Lot 10
-  drive(1, 0);
-  turn(0); //Northeast corner
-  drive(1, 0);
-  turn(0);
-  drive(1, 0);
-  turn(0);
-  drive(1, 1);
-  park(1, 0); //Lot 8
-  drive(1, 0);
-  turn(0);
-  drive(0, 0);
-  turn(0);
-  drive(0, 0);
-  turn(0);
-  drive(1, 0);
-  turn(1);
-  drive(1, 1);
-  park(1, 0); //Lot 7
-  drive(0, 0);
-  turn(0);
-  drive(0, 0);
-  turn(0);
-  drive(0, 0);
-  turn(1);
-  drive(0, 0);
-  turn(0); //Turn onto beltway
-  drive(1, 0);
-  turn(1);
-  drive(1, 0);
-  turn(0);
-  drive(0, 0);
-  turn(1);
-  drive(0, 0);
-  turn(1);
-  drive(1, 0);
-  turn(0);
-  drive(0, 1);
-  park(0, 0); //Lot 6
-  drive(0, 0);
-  turn(0);
-  drive(0, 0);
-  turn(0);
-  drive(0, 0);
-  turn(1);
-  drive(0, 0);
-  turn(2); //into roundabout
-  drive(0, 0);
-  turn(2); //exit roundabout
-  drive(0, 0);
-  turn(2);
-  drive(1, 0);
-  turn(1);
-  drive(1, 0);
-  turn(0); //beltway again
-  drive(1, 0);
-  turn(0); //leave beltway
-  drive(0, 0);
-  turn(1);
-  drive(0, 1);
-  park(1, 0); //Lot 4
-  drive(0, 0);
-  turn(2);
-  drive(0, 0);
-  turn(0);
-  drive(0, 0);
-  turn(0);
-  drive(0, 1);
-  park(0, 0); //Lot 3
-  drive(0, 0);
-  turn(1);
-  drive(0, 0);
-  turn(0);
-  drive(0, 0);
-  turn(1);
-  drive(0, 0);
-  turn(1);
-  drive(0, 0);
-  turn(0); //enter beltway
-  drive(1, 0);
-  turn(1);
-  drive(1, 0);
-  turn(1);
+  
 
   // THE ABOVE SEQUENCE MUST END WITH A TURN COMMAND IN THE INTERSECTION LEADING TO THE STOP BOX
 
@@ -209,6 +110,8 @@ void drive(int side, int destination)
   int otherColor = color((side + 1) % 2);
   int speed = LOW;
   int stopping = 0;
+  
+  //(0: black or error, 1: white, 2: red, 3: blue, 4: yellow, 5: green)
 
   while((destination != 0 || lastColor != 2 || otherColor != 2) && (destination != 1 || lastColor != 3) && (destination != 2 || stopping != 1)) // If destination == 0, this loops until red is seen, if destination == 1, blue.
   {
@@ -388,7 +291,7 @@ void park(int side, int space)
 // COLOR
 // Returns the color under the sensor indicated (0: black or error, 1: white, 2: red, 3: blue, 4: yellow, 5: green)
 // Arguments:
-//   side which side’s color sensor to query (0: left, 1: right)
+//   side which sideï¿½s color sensor to query (0: left, 1: right)
 
 int color(int side)
 {
